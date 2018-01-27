@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>七天课堂-直播间控制台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,Chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <script type="text/javascript" src="http://qitian-ui-develop.b0.upaiyun.com/qitian-app/public/js/jquery/3.1.1/jquery-3.1.1.min.js"></script>
+<link href="/css/less-25db8bdcf6.css" rel="stylesheet"></head>
+<body>
+<div class="outBox" id="app">
+
+    <div class="wrapper">
+        <!--顶部菜单栏 start-->
+        <ul class="menuUl" id="topMenu">
+            <template v-cloak>
+                <li class="active"><a href='javascript:void(null)'>课上管理</a></li>
+                <li><a href='javascript:void(null)'>课堂内容</a></li>
+                <li><a href='javascript:void(null)'>答题管理</a></li>
+                <li><a href='javascript:void(null)'>点名管理</a></li>
+                <li><a href='javascript:void(null)'>订单学生</a></li>
+                <li><a href='javascript:void(null)'>预约学生</a></li>
+            </template>
+        </ul>
+        <!--顶部菜单栏 end-->
+        <!--头部信息栏 start-->
+        <header-component id="topBar" :opts="headData"></header-component>
+
+        <!--头部信息栏 end-->
+        <div class="center_main">
+            <div class="main">
+                <!--表格 start-->
+                <div class="main_info" id="mainInfo">
+                    <template v-cloak>
+                        <ul class="info_tabsUl">
+                            <li v-for="(item, index) in items" v-bind:class="{active:item.isActive}" v-on:click="tabsHandler(index)">
+                                <a href="javascript:void(null)">{{item.title}}</a>
+                            </li>
+                        </ul>
+                        <template v-if="items[0].isActive">
+                            <div class="info_searchBox">
+                                <form method="post" id="searchBox">
+                                    <p class="tit">信息搜索：</p>
+                                    <div class="searchInp"><p>
+                                        <select v-model="searchSelec.selected" v-on:change="selecHandler($event.target.value)">
+                                            <option v-for="option in searchSelec.options" v-bind:value="option.value">{{option.text}}</option>
+                                        </select>
+                                    </p>
+                                        <!--v-bind:value=searchReq-->
+                                        <p><input name="searchInp" type="text" :placeholder=searchHolder(searchSelec.selected) v-model.trim="searchValue" /></p></div>
+                                    <div class="searchInp"><p>
+                                        <select v-model="sortSelec.selected" v-on:change="selecHandler($event.target.value)">
+                                            <option v-for="option in sortSelec.options" v-bind:value="option.value">{{option.text}}</option>
+                                        </select>
+                                    </p></div>
+                                    <p><a class="searchBtn" href='javascript:void(null)' v-on:click="searchSumbit">检索</a></p>
+                                </form>
+                            </div>
+                            <main-table-component  v-on:dlgEvent="selectHandler"  :checkeds="checkArr"></main-table-component>
+                        </template>
+                        <template v-if="items[1].isActive">
+                            <div class="ub ub_f1 bd_ddd" style="border-top:none;">
+                                dddd
+
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <!--表格 end-->
+                <!--聊天 start-->
+                <msg-component :msginfo="msgData" :myinfo="myInfo" id="mainMsg"></msg-component>
+                <!--聊天 end-->
+            </div>
+        </div>
+    </div>
+    <!--底部 start-->
+    <!--<footer-component id="footerBar" :ischeck="isCheck" v-on:checkall="checkHandler" ref="rs"></footer-component>-->
+    <div class="footer_bar" id="footerBar">
+        <template v-cloak>
+            <div class="footer_ctr">
+                <p><input type="checkbox" id='selecAll' name='selecAll' v-model='isCheck' v-on:change="selectAllFn" ref="checkas"/><label for="selecAll">全选</label></p>
+                <p @click="classShow"><a href='javascript:void(null)'>批量编辑课堂表现</a></p>
+            </div>
+            <ul class="footer_menu">
+                <li><a href='javascript:void(null)'>红包管理</a></li>
+                <li><a href='javascript:void(null)'>答题管理</a></li>
+                <li @click="msgSetHandler"><a href='javascript:void(null)'>聊天设置</a></li>
+                <li @click="noticeHandler"><a href='javascript:void(null)' >公告</a></li>
+            </ul>
+        </template>
+    </div>
+</div>
+<!--弹窗 start-->
+<dialog-component id="dialogCom" :opts=dlgData v-if="isShow" v-on:dlgclosed="dlgClose"  v-on:dlgbtnhandler="dlgBtnHandler" ></dialog-component>
+<!--弹窗 end-->
+<script type="text/javascript" src="/js/bundle.32988c89a479.min.js"></script></body>
+</html>

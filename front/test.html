@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:gs="http://www.gensee.com/gsml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Example Page</title>
+    <link href="https://static.gensee.com/webcast/static/tra/css/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
+    <link href="https://static.gensee.com/webcast/static/tra/css/education.css" rel="stylesheet" />
+    <link href="https://static.gensee.com/webcast/branding/default/tra/zh_CN/css/education_login.css" rel="stylesheet"/>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/jquery-1.7.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/jquery.validate.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/lang/i18nUtil.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/lang/common_lang.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/lang/jquery_message_i18n.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/jquery.ajaxError.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/countdown.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/paging.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/line.js"></script>
+    <script language="javascript" type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/branding/dealImage.js"></script>
+    <script type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/zclip/jquery.zclip.min.js"></script>
+    <script type="text/javascript" src="https://static.gensee.com/webcast/static/tra/js/jquery.qrcode.min.js"></script>
+
+    <!--<script charset="UTF-8" src="https://hls.gensee.com/sdk/site/sdk/gs/tra/video?widgetid=_GS_WIDGET_2_1493004607359&amp;embednetsettings=false&amp;site=hls.gensee.com&amp;ctx=gensee_tra&amp;ownerid=zQPZUoEzky&amp;code=zQPZUoEzky__647dd497e23645388b48da4dc54063d8&amp;httpmode=false&amp;chatenabled=true&amp;ver=4.0&amp;userdata=&amp;bar=false&amp;uid=9991024132&amp;uname=11111&amp;lang=zh_CN&amp;visible=true&amp;class=gs-sdk-widget&amp;jsonpcallback=__GSJsonp.jsonpcallback_0"></script>-->
+    <script type="text/javascript" src="http://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+    <link href="http://static.gensee.com/webcast/static/sdk/css/bootstrap.css" type="text/css" rel="stylesheet">
+
+    <style type="text/css">
+        .videoDiv {
+            height: 400px;
+        }
+        .docDiv {
+            height: 198px;
+            padding: 1px;
+        }
+    </style>
+    <script type="text/javascript">
+        //1. 根据组获得通讯通道
+        var channel = GS.createChannel();
+        //2. 通过通道监听点名事件
+        channel.bind("onRollcall", function (event) {
+            alert(event.data.timeout);
+        });
+        //2. 通过通道监听问答事件
+        channel.bind("onQA", function (event) {
+            alert(event.data.question);
+        });
+        //3.通过通道提问，提问，私聊，公聊的提交可以设置回调函数，同时resultInfo的格式为//{result:true|false,data:data},data即为提交的数据
+        channel.send("submitRollcall", {
+            "id" : 23534677685687
+        },function(resultInfo){
+        });
+        // 4.通过通道提交点名信息
+        channel.send("submitQuestion", {
+                "content" : "what's your name?"
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+<div class="row-fluid">
+    <div class="span6 videoDiv">
+        <!-- Video Widget -->
+        <gs:video-live site="hls.gensee.com" ctx="gensee_tra" ownerid="zQPZUoEzky" authcode="jxxs123"  embednetsettings="false" ver="4.0" />
+    </div>
+    <div class="span6">
+        <div class="docDiv">
+            <!-- Doc Widget -->
+            <gs:doc site="hls.gensee.com" ownerid="zQPZUoEzky" />
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

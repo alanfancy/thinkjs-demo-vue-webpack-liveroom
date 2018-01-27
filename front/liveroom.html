@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns:gs="http://www.gensee.com/ec">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>七天课堂-直播间</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,Chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <script type="text/javascript" src="//qitian-ui-develop.b0.upaiyun.com/qitian-app/public/js/jquery/3.1.1/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+
+    <script type="text/javascript">
+        //1. 根据组获得通讯通道
+        /*var channel = channel||GS.createChannel();
+        //2. 通过通道监听点名事件
+        channel.bind("onRollcall", function (event) {
+            alert(event.data.timeout);
+        });
+        //2. 通过通道监听问答事件
+        channel.bind("onQA", function (event) {
+            alert(event.data.question);
+        });
+        //3.通过通道提问，提问，私聊，公聊的提交可以设置回调函数，同时resultInfo的格式为//{result:true|false,data:data},data即为提交的数据
+        channel.send("submitRollcall", {
+            "id" : 23534677685687
+        },function(resultInfo){
+        });
+        // 4.通过通道提交点名信息
+        channel.send("submitQuestion", {
+
+        });*/
+    </script>
+</head>
+<body>
+
+<div class="outBox" style="display:none;">
+    <div class="wrapper">
+        <!--            sidebar-->
+        <left-component id="leftSideBar" :liveinfo="liveInfo"></left-component>
+        <!--            main-->
+        <center-component id="centerMain" :liveinfo="liveInfo" :count="Total" :netsettings="netSettings" :netstatus="netStatus"></center-component>
+        <!--            mediabar-->
+        <right-component ref="msgchannel" id="rightSideBar" :msginfo="msgData" :notices="noticeMsgArr" :liveinfo="liveInfo"></right-component>
+    </div>
+    <!--弹窗 start-->
+    <dialog-component id="dialogCom" :opts=dlgData v-if="dlgShow" v-on:dlgclosed="dlgClose"  v-on:dlgbtnhandler="dlgBtnHandler" ></dialog-component>
+    <!--弹窗 end-->
+</div>
+
+</body>
+<script type="text/javascript" src="./dist/bundle.js"></script>
+</html>
