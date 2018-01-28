@@ -12,7 +12,7 @@ var entry=PRODUCTION
     :   [
         './src/js/liveroom.js',
         'webpack/hot/dev-server',//开启热重载 hot
-        'webpack-dev-server/client?http://192.168.0.78:8090'//添加webpack-dev-server客户端
+        'webpack-dev-server/client?http://127.0.0.1:8090'//添加webpack-dev-server客户端
     ];
 const extractCSS = new ExtractTextPlugin({//提取样式插件
     //'style-[contenthash:10].css'//根据内容生成hash值

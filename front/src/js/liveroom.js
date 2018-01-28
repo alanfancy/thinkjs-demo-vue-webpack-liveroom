@@ -26,7 +26,7 @@ let getUserData=sessionStorage.getItem('userdata');
 /*let sessionData=JSON.parse(getSession);
 let stuid=sessionData.stuid;*/
 
-Vue.use(socket,'ws://192.168.0.78:8360');
+Vue.use(socket,'ws://127.0.0.1:8360');
 function storageData(obj){
     this.stuid=obj.stu_id;
     this.mobile=obj.mobile;

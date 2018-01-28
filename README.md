@@ -20,7 +20,7 @@ SDK  ID:	zAJbojojaA
 >ownerId:'zAJbojojaA',//SDK id
 >authCode:'123456789',//登陆口令
 
->Vue.use(socket,'ws://192.168.0.78:8360');
+>Vue.use(socket,'ws://127.0.0.1:8360');
 
 3.核对dev-server.js服务器的IP
 4.核对webpack.config.js的webpack-dev-server客户端IP
@@ -28,7 +28,7 @@ SDK  ID:	zAJbojojaA
 后台：
 1.检查socket.io是否安装成功
 2.核对src/config/config.js的IP
-host: '192.168.0.78'
+host: '127.0.0.1'
 
 后台启动：
 npm start
@@ -36,4 +36,6 @@ npm start
 npm run dev
 
 测试地址：
-http://192.168.0.78:8090/liveroom.html
+http://127.0.0.1:8090/liveroom.html
+测试账号：13412345678
+密码：123456

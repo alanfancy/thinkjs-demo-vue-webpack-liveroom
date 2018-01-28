@@ -11,4 +11,4 @@ var server=new WebpackDevServer(compiler,{//创建服务器实例
         colors:true
     }
 });
-server.listen(8090,'192.168.0.78',function(){});
+server.listen(8090,'127.0.0.1',function(){});
