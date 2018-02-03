@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19a06a4d-d159-4f79-a631-fe5b57084f1f" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vagrant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backfile/package-lock.json" afterPath="$PROJECT_DIR$/backfile/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backfile/package.json" afterPath="$PROJECT_DIR$/backfile/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backfile/src/config/config.js" afterPath="$PROJECT_DIR$/backfile/src/config/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/dev-server.js" afterPath="$PROJECT_DIR$/front/dev-server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/package-lock.json" afterPath="$PROJECT_DIR$/front/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/package.json" afterPath="$PROJECT_DIR$/front/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/src/js/liveroom.js" afterPath="$PROJECT_DIR$/front/src/js/liveroom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/webpack.config.js" afterPath="$PROJECT_DIR$/front/webpack.config.js" />
-    </list>
+    <list default="true" id="19a06a4d-d159-4f79-a631-fe5b57084f1f" name="默认的" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -268,7 +255,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="nodejs_interpreter_path" value="D:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../thinkjs-demo-drag-validatecode-form" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
@@ -299,12 +286,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517042374276</updated>
       <workItem from="1517042375574" duration="147000" />
-      <workItem from="1517126359883" duration="1748000" />
+      <workItem from="1517126359883" duration="2324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1895000" />
+    <option name="totallyTimeSpent" value="2471000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
